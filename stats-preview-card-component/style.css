@@ -1,0 +1,133 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&family=Lexend+Deca&display=swap");
+*,
+::after,
+::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --Very-dark-blue: hsl(233, 47%, 7%);
+  --Dark-desaturated-blue: hsl(244, 38%, 16%);
+  --Soft-violet: hsl(277, 64%, 61%);
+
+  --White: hsl(0, 0%, 100%);
+  --Slightly-transparent: hsla(0, 0%, 100%, 0.75);
+  --lightly-transparent: hsla(0, 0%, 100%, 0.6);
+
+  --ff-primary: "Inter";
+  --ff-secondary: "Lexend Deca";
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  background: var(--Very-dark-blue);
+  color: var(--White);
+  font: 15px var(--ff-primary);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+main {
+  background: var(--Dark-desaturated-blue);
+  height: 85%;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  border-radius: 0.5em 0.5em 0 0;
+  margin-bottom: 1em;
+}
+.image-container {
+  height: 40%;
+  width: 100%;
+  border-radius: inherit;
+  align-self: flex-start;
+  margin-bottom: 2em;
+  background-image: url(./images/image-header-mobile.jpg);
+  background-color: var(--Soft-violet);
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  background-size: 100% 100%;
+}
+
+h1 {
+  margin: 0 1.6em;
+  font: 25px var(--ff-secondary);
+}
+span {
+  color: var(--Soft-violet);
+}
+p {
+  color: var(--lightly-transparent);
+  padding: 1em 2.5em 2em 2.5em;
+  text-align: center;
+  line-height: 2em;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-bottom: 2em;
+}
+
+h3 {
+  margin-top: 0.5em;
+  color: var(--lightly-transparent);
+  font-size: 11px;
+  text-transform: capitalize;
+  letter-spacing: 0.2em;
+}
+.attribution {
+  text-align: center;
+  font-size: 0.5em;
+  position: absolute;
+  bottom: 1em;
+}
+a {
+  text-decoration: none;
+  color: var(--White);
+}
+
+@media (min-width: 768px) {
+  main {
+    width: 70%;
+    max-width: 1100px;
+    height: 50%;
+    flex-direction: row-reverse;
+
+    border-radius: 0.5em;
+  }
+  .image-container {
+    background-image: url(./images/image-header-desktop.jpg);
+    height: 100%;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+    background-size: 100% 100%;
+    margin: unset;
+  }
+  .text-container {
+    text-align: left;
+    width: 100%;
+  }
+  p {
+    text-align: left;
+    line-height: 1.4em;
+  }
+
+  ul {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    gap: unset;
+  }
+}

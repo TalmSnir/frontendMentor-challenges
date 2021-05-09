@@ -1,0 +1,112 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --bright-orange: hsl(31, 77%, 52%);
+  --dark-cyan: hsl(184, 100%, 22%);
+  --very-dark-cyan: hsl(179, 100%, 13%);
+  --Transparent-white: hsla(0, 0%, 100%, 0.75);
+  --Very-light-gray: hsl(0, 0%, 95%);
+
+  --ff-primary: "Lexend Deca";
+  --ff-secondary: "Big Shoulders Display";
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  font-size: 1.2em;
+  background: var(--Very-light-gray);
+  font-family: var(--ff-primary);
+  line-height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cards-wrapper {
+  height: 90%;
+  width: 90%;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-around;
+  gap: 2em;
+  padding: 2em 2em;
+}
+
+h1 {
+  color: var(--Very-light-gray);
+  font-family: var(--ff-secondary);
+  text-transform: uppercase;
+}
+.card-1 {
+  background: var(--bright-orange);
+  background-position: 1em 1em;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.card-2 {
+  background: var(--dark-cyan);
+}
+.card-3 {
+  background: var(--very-dark-cyan);
+  border-radius: 0 0 0.5em 0.5em;
+}
+
+.card-des {
+  color: var(--Transparent-white);
+}
+
+.btn {
+  background: var(--Very-light-gray);
+  border-radius: 3em;
+  text-transform: capitalize;
+  padding: 0.2em 1.5em;
+}
+.btn:hover,
+.btn:focus {
+  background: transparent;
+  cursor: pointer;
+  color: var(--Very-light-gray);
+  outline: none;
+  box-shadow: inset 0 0 0 0.1em var(--Very-light-gray);
+}
+.btn-sedans {
+  color: var(--bright-orange);
+}
+.btn-suvs {
+  color: var(--dark-cyan);
+}
+
+.btn-luxury {
+  color: var(--very-dark-cyan);
+}
+a {
+  text-decoration: none;
+}
+@media (min-width: 920px) {
+  .cards-wrapper {
+    flex-direction: row;
+    height: 70%;
+  }
+  .card-1 {
+    border-radius: 0.5em 0 0 0.5em;
+  }
+
+  .card-3 {
+    border-radius: 0 0.5em 0.5em 0;
+  }
+}

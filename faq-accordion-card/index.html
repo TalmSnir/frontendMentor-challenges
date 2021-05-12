@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | FAQ Accordion Card</title>
+  </head>
+  <body>
+    <div class="container">
+      <figure class="pictures">
+        <picture class="image-woman-container">
+          <source
+            media="(max-width: 900px)"
+            srcset="./images/illustration-woman-online-mobile.svg"
+          />
+          <source
+            media="(min-width: 900px)"
+            srcset="./images/illustration-woman-online-desktop.svg"
+          />
+          <img
+            src="./images/illustration-woman-online-mobile.svg"
+            alt="woman-image"
+          />
+
+          <picture class="image-shadow-container">
+            <source
+              media="(max-width: 900px)"
+              srcset="./images/bg-pattern-mobile.svg"
+            />
+            <source
+              media="(min-width: 900px)"
+              srcset="./images/bg-pattern-desktop.svg"
+            />
+            <img
+              src="./images/illustration-woman-online-mobile.svg"
+              alt="woman-image"
+            />
+          </picture>
+        </picture>
+      </figure>
+      <picture class="box-image">
+        <img src="./images/illustration-box-desktop.svg" alt=""
+      /></picture>
+      <div class="qa-blocks-container">
+        <h1 class="container-title">faq</h1>
+        <div class="qa-block qa-1">
+          <p class="question q-1">How many team members can I invite?</p>
+          <span class="arrow"></span>
+          <p class="answer answer-1">
+            You can invite up to 2 additional users on the Free plan. There is
+            no limit on team members for the Premium plan.
+          </p>
+        </div>
+        <div class="qa-block qa-2">
+          <p class="question q-2">What is the maximum file upload size?</p>
+          <span class="arrow"></span>
+          <p class="answer answer-2">
+            No more than 2GB. All files in your account must fit your allotted
+            storage space.
+          </p>
+        </div>
+        <div class="qa-block qa-3">
+          <p class="question q-3">How do I reset my password?</p>
+          <span class="arrow"></span>
+          <p class="answer answer-3">
+            Click “Forgot password” from the login page or “Change password”
+            from your profile page. A reset link will be emailed to you.
+          </p>
+        </div>
+        <div class="qa-block qa-4">
+          <p class="question q-4 answer-4">Can I cancel my subscription?</p>
+          <span class="arrow"></span>
+          <p class="answer">
+            Yes! Send us a message and we’ll process your request no qa-blocks
+            asked.
+          </p>
+        </div>
+        <div class="qa-block qa-5">
+          <p class="question q-5">Do you provide additional support?</p>
+          <span class="arrow"></span>
+          <p class="answer answer-5">
+            Chat and email support is available 24/7. Phone lines are open
+            during normal business hours.
+          </p>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

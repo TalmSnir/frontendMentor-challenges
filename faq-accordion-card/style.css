@@ -1,0 +1,155 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@700&display=swap");
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --vary-dark-des: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+  --light-grayish-blue: hsl(240, 5%, 91%);
+  --ff-primary: "Kumbh Sans";
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, var(--soft-violet), var(--soft-blue))
+    no-repeat;
+  font-family: var(--ff-primary);
+}
+
+.container {
+  height: 85%;
+  width: 90%;
+  min-width: 350px;
+  border-radius: 1em;
+  background: white;
+  padding: 2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pictures {
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.image-woman-container {
+  margin-top: -5em;
+}
+.image-shadow-container {
+  margin-top: -6em;
+  margin-right: -1em;
+}
+.box-image {
+  display: none;
+}
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-top: 0.1em;
+}
+.qa-blocks-container {
+  height: 100%;
+  width: 100%;
+  margin-top: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.qa-block {
+  width: 100%;
+  padding-bottom: 1em;
+  margin-bottom: 0.5em;
+  border-bottom: 0.1em solid var(--light-grayish-blue);
+  position: relative;
+}
+.question {
+  color: var(--very-grayish-blue);
+  position: relative;
+  padding-bottom: 0.1em;
+}
+.question:hover,
+.question:focus {
+  color: var(--soft-red);
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: solid var(--soft-red);
+  padding: 0.15em;
+  border-width: 0 0.2em 0.2em 0;
+  transform: rotateZ(45deg);
+  cursor: pointer;
+}
+
+.answer {
+  display: none;
+  font-size: 0.8em;
+  line-height: 1.4em;
+  color: var(--dark-grayish-blue);
+}
+.answer.active {
+  display: unset;
+}
+@media (min-width: 900px) {
+  .container {
+    height: 70%;
+    max-width: 1300px;
+    flex-direction: row;
+    justify-content: space-between;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .container-title {
+    align-self: flex-start;
+    margin-bottom: 2em;
+  }
+  .qa-blocks-container {
+    width: 50%;
+    height: 60%;
+    justify-content: center;
+  }
+  .pictures {
+    width: 50%;
+  }
+  .image-woman-container {
+    align-self: flex-start;
+    margin-bottom: -2em;
+    margin-left: -6em;
+    position: relative;
+    z-index: 0;
+  }
+  .image-shadow-container {
+    position: absolute;
+    left: -105%;
+    bottom: -60%;
+    z-index: -1;
+  }
+  .box-image {
+    display: unset;
+    position: absolute;
+    left: -5em;
+    height: 10%;
+    bottom: 30%;
+    z-index: 2;
+  }
+}

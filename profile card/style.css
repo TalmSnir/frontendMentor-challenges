@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --dark-cyan: hsl(185, 75%, 39%);
+  --very-dark-des-blue: hsl(229, 23%, 23%);
+  --dark-grayish-blue: hsl(227, 10%, 46%);
+  --dark-gray: hsl(0, 0%, 59%);
+  --ff-primary: "Kumbh Sans";
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font: 1rem var(--ff-primary);
+  font-weight: 800;
+  background: var(--dark-cyan);
+  position: relative;
+  z-index: 2;
+}
+body::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  background: url(./images/bg-pattern-top.svg) no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  z-index: 1;
+}
+body::after {
+  content: "";
+  position: absolute;
+  bottom: -70%;
+  right: -50%;
+  background: url(./images/bg-pattern-bottom.svg) no-repeat;
+  background-size: contain;
+  height: 100%;
+  width: 100%;
+  z-index: 0;
+}
+
+.profile-card {
+  height: 50%;
+  width: 85%;
+  background: white;
+  background-image: url(./images/bg-pattern-card.svg);
+  background-size: 100% 30%;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1em;
+  position: relative;
+  z-index: 3;
+}
+
+.profile-image {
+  border-radius: 50%;
+  border: 0.3em solid white;
+  background: white;
+  position: absolute;
+  top: 20%;
+}
+.user-basic-data {
+  position: absolute;
+  top: 55%;
+}
+
+.user-basic-data .username {
+  font-size: 1.2rem;
+  color: var(--very-dark-des-blue);
+}
+.user-basic-data .location,
+.user-basic-data span {
+  color: var(--dark-grayish-blue);
+}
+.user-basic-data .location {
+  text-align: center;
+  margin-top: 1em;
+  font-size: 1em;
+}
+
+.profile-data {
+  height: 25%;
+  width: 100%;
+  position: absolute;
+  top: 75%;
+  border-top: 1px solid var(--dark-gray);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.data-list {
+  display: flex;
+  justify-content: space-around;
+  list-style: none;
+  font-size: 0.7rem;
+  color: var(--very-dark-des-blue);
+  text-align: center;
+}
+.data-heading {
+  font-size: 1em;
+  letter-spacing: 0.2em;
+  color: var(--dark-gray);
+}

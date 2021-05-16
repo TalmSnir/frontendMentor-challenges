@@ -1,0 +1,152 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --desaturated-red: hsl(0, 36%, 70%);
+  --soft-red: hsl(0, 93%, 68%);
+  --dark-grayish-red: hsl(0, 6%, 24%);
+  --linear-100: 135deg, hsl(0, 0%, 100%), hsl(0, 100%, 95%);
+  --linear-200: 135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%);
+
+  --ff-primary: "Josefin Sans", sans-serif;
+}
+body {
+  height: 100vh;
+  width: 100vw;
+  padding: 0;
+  margin: 0;
+  background: linear-gradient(var(--linear-100));
+}
+header {
+  width: 100%;
+  height: 8%;
+  display: flex;
+  align-items: center;
+}
+header .logo {
+  margin-left: 2em;
+  height: 40%;
+}
+
+.hero-image > img {
+  object-position: center;
+  width: 100%;
+  height: 30vh;
+}
+
+main {
+  text-align: center;
+  margin-top: 3em;
+  color: var(--desaturated-red);
+  font-family: var(--ff-primary);
+  padding: 0 2em;
+}
+.text h1 {
+  font-size: 3rem;
+  color: var(--dark-grayish-red);
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 400;
+}
+.text span {
+  color: var(--desaturated-red);
+  font-weight: 300;
+}
+.welcome-text {
+  margin-top: 2em;
+  line-height: 1.5;
+}
+.contact {
+  margin-top: 2em;
+}
+form {
+  position: relative;
+}
+.contact input[type="email"] {
+  width: 100%;
+  height: 4em;
+  border-radius: 3em;
+  background: transparent;
+  border: 1px solid var(--desaturated-red);
+  color: var(--desaturated-red);
+  padding-left: 2em;
+}
+input[type="email"]::placeholder {
+  color: var(--desaturated-red);
+}
+label {
+  position: absolute;
+  bottom: -1.3em;
+  left: 2em;
+  color: var(--soft-red);
+  opacity: 0;
+}
+.error-icon {
+  position: absolute;
+  top: 25%;
+  right: 5em;
+  opacity: 0;
+}
+.btn {
+  position: absolute;
+  border-radius: 3em;
+  background: linear-gradient(var(--linear-200));
+  height: 4em;
+  width: 5em;
+  border: none;
+  right: 0;
+  cursor: pointer;
+}
+
+input[type="email"]:focus {
+  outline: none;
+  border: 2px solid var(--desaturated-red);
+}
+
+@media (min-width: 700px) {
+  body {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    grid-template-rows: 1fr 6fr;
+  }
+  header {
+    grid-row: 1;
+    grid-column: 1;
+    height: 100%;
+  }
+  header .logo {
+    height: 30%;
+    margin-left: 15%;
+  }
+  .hero-image {
+    grid-row: 1 /-1;
+    grid-column: 2;
+  }
+  .hero-image img {
+    height: 100%;
+  }
+  main {
+    grid-column: 1;
+    grid-row: 2 / span 2;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15%;
+    margin-top: 6em;
+    padding: 0 5em 0 0;
+    text-align: left;
+    max-width: 800px;
+  }
+  .text h1 {
+    font-size: 4rem;
+  }
+  .welcome-text {
+    font-size: 1.5em;
+    line-height: 2em;
+  }
+}

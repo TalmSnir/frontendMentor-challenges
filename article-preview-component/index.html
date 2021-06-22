@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Article preview component</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="hero-image">
+        <img src="./images/drawers.jpg" alt="" class="drawers-image" />
+      </div>
+      <main>
+        <h1 class="title">
+          Shift the overall look and feel by adding these wonderful touches to
+          furniture in your home
+        </h1>
+        <p class="des">
+          Ever been in a room and felt like something was missing? Perhaps it
+          felt slightly bare and uninviting. I’ve got some simple tips to help
+          you make any room feel complete.
+        </p>
+      
+      
+      </main>
+      <div class="writer">
+        <img src="./images/avatar-michelle.jpg" alt="" class="avatar" />
+        <div class="writer__info">
+          <h1 class="writer__name">Michelle Appleton</h1>
+          <h2 class="date">28 Jun 2020</h2>
+        </div>
+
+        <button class="share-btn"><i class="fas fa-share"></i></button>
+        <nav class="share__nav">
+        <span>share</span>
+        <ul class="share__icons">
+        <li><i class="fab fa-facebook"></i></li>
+        <li> </i><i class="fab fa-twitter"></i></li>
+        <li> <i class="fab fa-pinterest"></i></li>
+        </ul>
+        
+        </nav>
+      </div>
+    </div>
+    <script>
+    
+    const shareBtn=document.querySelector('.share-btn');
+    const shareBtnIcon=document.querySelector('.fa-share');
+    const shareNav=document.querySelector('.share__nav');
+     function toggleShareNav(){
+      shareNav.classList.toggle('active');
+      shareBtn.classList.toggle('active');
+      shareBtnIcon.classList.toggle('active');
+      
+      
+        }
+   
+
+    shareBtn.addEventListener('click',toggleShareNav);
+    
+    </script>
+  </body>
+</html>

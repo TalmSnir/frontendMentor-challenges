@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --ff-primary: "Manrope", sans-serif;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background: var(--light-grayish-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: var(--ff-primary);
+}
+.wrapper {
+  height: 80vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 1em;
+  background: white;
+  overflow: hidden;
+  box-shadow: 0.2em 0.2em 0.5em 0 var(--desaturated-dark-blue);
+}
+.hero-image {
+  width: 100%;
+  height: 40%;
+}
+.drawers-image {
+  width: 100%;
+  height: 100%;
+}
+main {
+  width: 100%;
+  line-height: 1.7;
+  padding: 0.5em 1.2em;
+}
+main > .title {
+  font-size: clamp(1.2em, 1.4em, 1.8em);
+  color: var(--very-dark-grayish-blue);
+  margin-bottom: 0.5em;
+}
+main > .des {
+  color: var(--desaturated-dark-blue);
+  font-size: clamp(1em, 1.2em, 1.4em);
+}
+.writer {
+  width: 100%;
+  padding: 0 2em 0.5em 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.avatar {
+  border-radius: 50%;
+  height: 3em;
+  width: 3em;
+}
+.writer__info {
+  margin-left: 1em;
+}
+.writer__name {
+  font-size: 1em;
+  color: var(--very-dark-grayish-blue);
+}
+.date {
+  font-size: 0.8em;
+  color: var(--grayish-blue);
+}
+.share-btn {
+  height: 2.5em;
+  width: 2.5em;
+  color: var(--very-dark-grayish-blue);
+  border: none;
+  border-radius: 50%;
+  background: var(--light-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-left: auto;
+  z-index: 3;
+}
+.share-btn:hover {
+  cursor: pointer;
+  filter: brightness(90%);
+}
+.share-btn:focus {
+  outline: none;
+}
+.share-btn.active {
+  background: var(--desaturated-dark-blue);
+}
+
+.fa-share {
+  color: var(--desaturated-dark-blue);
+  border: none;
+  background: transparent;
+}
+.fa-share.active {
+  color: var(--light-grayish-blue);
+}
+.share__nav {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  bottom: 0;
+  display: none;
+  z-index: 2;
+  background: var(--very-dark-grayish-blue);
+  gap: 2em;
+  align-items: center;
+  padding-left: 2em;
+}
+.share__nav.active {
+  display: flex;
+}
+.share__nav > span {
+  letter-spacing: 0.5em;
+  font-size: 0.8em;
+  color: var(--grayish-blue);
+  text-transform: uppercase;
+}
+.share__icons {
+  list-style: none;
+  display: flex;
+  gap: 1.5em;
+  color: var(--light-grayish-blue);
+}
+.share__icons > li {
+  transform: scale(1.5);
+}
+.share__icons > li:hover,
+.share__icons > li:focus {
+  filter: brightness(90%);
+  cursor: pointer;
+}
+@media (min-width: 700px) {
+  .wrapper {
+    height: 60%;
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    grid-template-rows: 4fr 1fr;
+  }
+
+  .hero-image {
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1/-1;
+  }
+  main {
+    grid-column: 2;
+    grid-row: 1;
+    padding: 0 2em;
+  }
+
+  .writer {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
+}

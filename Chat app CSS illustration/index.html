@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | [Challenge Name Here]</title>
+  </head>
+  <body>
+    <div class="bg-shape bg-shape-left"></div>
+    <div class="bg-shape bg-shape-right"></div>
+    <div class="wrapper">
+      <div class="phone-wrapper">
+        <div class="phone-container">
+          <div class="app-content">
+            <div class="top-bar">
+              <div class="top-bar__left">
+                <span class="chevron top-bar__icon--left top-bar__icon"></span>
+                <img src="./assets/avatar.jpg" alt="" class="top-bar__avatar" />
+                <div class="top-bar__text">
+                  <span class="text__name">Samuel Green</span
+                  ><span class="text__status">Available to Walk</span>
+                </div>
+              </div>
+              <div class="top-bar__right">
+                <span class="top-bar__icon--right top-bar__icon">...</span>
+              </div>
+            </div>
+            <div class="messages">
+              <div class="message-block message-block-1">
+                <div class="message">
+                  That sounds great. I’d be happy to discuss more.
+                </div>
+                <div class="message">
+                  Could you send over some pictures of your dog, please?
+                </div>
+              </div>
+              <div class="message-block message-block-2">
+                <div class="message">
+                  <img src="./assets/dog-image-1.jpg" alt="" /><img
+                    src="./assets/dog-image-2.jpg"
+                    alt=""
+                  /><img src="./assets/dog-image-3.jpg" alt="" />
+                </div>
+                <div class="message">
+                  Here are a few pictures. She’s a happy girl!
+                </div>
+                <div class="message">Can you make it?</div>
+              </div>
+              <div class="message-block message-block-3">
+                <div class="message">
+                  She looks so happy! The time we discussed works. How long
+                  shall I take her out for?
+                </div>
+              </div>
+              <div class="message-block message-block-4">
+                <div class="message">
+                  <label>
+                    <input type="radio" name="minutes" id="minutes" />
+                    <span class="radio-replacement"></span>
+                    30 minute walk
+                  </label>
+                  <span>$29</span>
+                </div>
+                <div class="message">
+                  <label>
+                    <input type="radio" name="hour" id="hour" />
+                    <span class="radio-replacement"></span>
+                    1 hour walk
+                  </label>
+                  <span>$49</span>
+                </div>
+              </div>
+              <div class="message-block message-block-5">
+                <input type="text" placeholder="Type a message…" />
+                <button><span class="chevron"></span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-container">
+        <h1>Simple booking</h1>
+        <p>
+          Stay in touch with our dog walkers through the chat interface. This
+          makes it easy to discuss arrangements and make bookings. Once the walk
+          has been completed you can rate your walker and book again all through
+          the chat.
+        </p>
+      </div>
+    </div>
+  </body>
+</html>

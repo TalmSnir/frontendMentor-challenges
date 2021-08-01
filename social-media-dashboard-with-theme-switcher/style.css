@@ -28,19 +28,7 @@
   --clr-text: hsl(230, 17%, 14%);
   --clr-textSm: hsl(228, 12%, 44%);
   --clr-toggleBg: hsl(230, 22%, 74%);
-  /* 
-  --clr-Toggle-light: linear-gradient(hsl(210, 78%, 56%) to hsl(146, 68%, 55%));
-  --clr-Toggle-dark: hsl(230, 22%, 74%);
-  --clr-Very-Dark-Blue-BG-dark: hsl(230, 17%, 14%);
-  --clr-Very-Dark-Blue-Top-BG-Pattern-dar: hsl(232, 19%, 15%);
-  --clr-Dark-Desaturated-Blue-Card-BG-dar: hsl(228, 28%, 20%);
-  --clr-Desaturated-Blue-Text-dar: hsl(228, 34%, 66%);
-  --clr-White-Text-dar: hsl(0, 0%, 100%);
-  --clr-White-BG-light: hsl(0, 0%, 100%);
-  --clr-Very-Pale-Blue-Top-BG-Pattern-light: hsl(225, 100%, 98%);
-  --clr-Light-Grayish-Blue-Card-BG-light: hsl(227, 47%, 96%);
-  --clr-Dark-Grayish-Blue-Text-light: hsl(228, 12%, 44%);
-  --clr-Very-Dark-Blue-Text-light: hsl(230, 17%, 14%); */
+
   /*----------  font sizes  ----------*/
   --fs-followers-number: 4rem;
   --fs-followers-text: 0.8rem;
@@ -193,7 +181,6 @@ input[type="checkbox"]:checked + span {
   align-items: center;
   min-height: 240px;
   background: var(--clr-cardBgTop);
-  
 }
 .total__card:nth-child(1) {
   border-top: 4px solid var(--clr-Facebook);
@@ -202,16 +189,17 @@ input[type="checkbox"]:checked + span {
   border-top: 4px solid var(--clr-Twitter);
 }
 .total__card:nth-child(3) {
-  position: relative;overflow:hidden;
+  position: relative;
+  overflow: hidden;
 }
 .total__card:nth-child(3)::before {
-    content:'';
-  position:absolute;
-  height:4px;
+  content: "";
+  position: absolute;
+  height: 4px;
   width: 100%;
-  background:var(--clr-Instagram);
-  top:0;
-  left:0;
+  background: var(--clr-Instagram);
+  top: 0;
+  left: 0;
 }
 
 .total__card:nth-child(4) {

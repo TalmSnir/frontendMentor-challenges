@@ -1,0 +1,272 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /*----------  colors  ----------*/
+
+  /*----------  constant colors  ----------*/
+
+  --clr-Lime-Green: hsl(163, 72%, 41%);
+  --clr-Bright-Red: hsl(356, 69%, 56%);
+  --clr-Facebook: hsl(208, 92%, 53%);
+  --clr-Twitter: hsl(203, 89%, 53%);
+  --clr-Instagram: linear-gradient(
+    to right,
+    hsl(37, 97%, 70%),
+    hsl(329, 70%, 58%)
+  );
+  --clr-YouTube: hsl(348, 97%, 39%);
+  /*----------  changeable colors  ----------*/
+  --clr-pageBg: hsl(0, 0%, 100%);
+  --clr-cardBgTop: hsl(225, 100%, 98%);
+  --clr-cardBgBottom: hsl(227, 47%, 96%);
+  --clr-text: hsl(230, 17%, 14%);
+  --clr-textSm: hsl(228, 12%, 44%);
+  --clr-toggleBg: hsl(230, 22%, 74%);
+  /* 
+  --clr-Toggle-light: linear-gradient(hsl(210, 78%, 56%) to hsl(146, 68%, 55%));
+  --clr-Toggle-dark: hsl(230, 22%, 74%);
+  --clr-Very-Dark-Blue-BG-dark: hsl(230, 17%, 14%);
+  --clr-Very-Dark-Blue-Top-BG-Pattern-dar: hsl(232, 19%, 15%);
+  --clr-Dark-Desaturated-Blue-Card-BG-dar: hsl(228, 28%, 20%);
+  --clr-Desaturated-Blue-Text-dar: hsl(228, 34%, 66%);
+  --clr-White-Text-dar: hsl(0, 0%, 100%);
+  --clr-White-BG-light: hsl(0, 0%, 100%);
+  --clr-Very-Pale-Blue-Top-BG-Pattern-light: hsl(225, 100%, 98%);
+  --clr-Light-Grayish-Blue-Card-BG-light: hsl(227, 47%, 96%);
+  --clr-Dark-Grayish-Blue-Text-light: hsl(228, 12%, 44%);
+  --clr-Very-Dark-Blue-Text-light: hsl(230, 17%, 14%); */
+  /*----------  font sizes  ----------*/
+  --fs-followers-number: 4rem;
+  --fs-followers-text: 0.8rem;
+  --fs-up-down__number: 0.4rem;
+  --fs-today-card-stats-text: 1.2rem;
+  --fs-today-card-stats-number: 3rem;
+
+  /*----------  font weightss  ----------*/
+  --fw-lg: 700;
+  --fw-sm: 400;
+  /*----------  font family  ----------*/
+  --ff-primary: "Inter", sans-serif;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+/* svg {
+  width: 100%;
+  height: 100%;
+} */
+.percentage__arrow {
+  position: relative;
+}
+.percentage__arrow svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+body {
+  min-height: 100vh;
+  font-family: var(--ff-primary);
+  color: var(--clr-text);
+  background: var(--clr-pageBg);
+}
+/*=============================================
+=            grids            =
+=============================================*/
+.grid-container {
+  padding: 2rem 1rem;
+  display: grid;
+  gap: 2rem;
+}
+.grid-total,
+.grid-today {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/*=============================================
+=            main title            =
+=============================================*/
+
+.main-title {
+  grid-row: 1;
+  font-size: 1.4rem;
+}
+.container__title {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: var(--fw-lg);
+}
+.container__title__text {
+  position: relative;
+}
+
+:is(.container__title__toggle, .container__title) span {
+  color: var(--clr-textSm);
+}
+.container__title__text::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 1px;
+  bottom: -1rem;
+  left: 0;
+  background: var(--clr-textSm);
+}
+.container__title__toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container__title__toggle span {
+  text-transform: capitalize;
+}
+
+/*----------  toggle-dark/light  ----------*/
+
+.container__title__toggle label {
+  height: 2rem;
+  width: 4rem;
+  background: var(--clr-toggleBg);
+  border-radius: 3rem;
+  position: relative;
+  cursor: pointer;
+}
+label span {
+  position: absolute;
+  top: 50%;
+  right: 0.2rem;
+  transform: translateY(-50%);
+  height: 1.6rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background: var(--clr-pageBg);
+}
+input[type="checkbox"] {
+  opacity: 0;
+}
+input[type="checkbox"]:checked + span {
+  right: unset;
+  left: 0.2rem;
+}
+
+/*=============================================
+=            cards            =
+=============================================*/
+
+.card {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.4rem;
+}
+.up-down {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--clr-Lime-Green);
+  font-weight: var(--fw-lg);
+}
+.down {
+  color: var(--clr-Bright-Red);
+}
+/*=============================================
+=            top-grid            =
+=============================================*/
+
+/*----------  top-card  ----------*/
+
+.total__card {
+  align-items: center;
+  min-height: 240px;
+  background: var(--clr-cardBgTop);
+  
+}
+.total__card:nth-child(1) {
+  border-top: 4px solid var(--clr-Facebook);
+}
+.total__card:nth-child(2) {
+  border-top: 4px solid var(--clr-Twitter);
+}
+.total__card:nth-child(3) {
+  position: relative;overflow:hidden;
+}
+.total__card:nth-child(3)::before {
+    content:'';
+  position:absolute;
+  height:4px;
+  width: 100%;
+  background:var(--clr-Instagram);
+  top:0;
+  left:0;
+}
+
+.total__card:nth-child(4) {
+  border-top: 4px solid var(--clr-YouTube);
+}
+.total__card__top {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.total__card__number {
+  font-size: var(--fs-followers-number);
+}
+.total__card__number span {
+  display: block;
+  font-size: var(--fs-followers-text);
+  letter-spacing: 0.2rem;
+  font-weight: var(--fw-sm);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+/*=============================================
+=            bottom-grid            =
+=============================================*/
+.grid-today {
+  display: grid;
+}
+.today__card {
+  background: var(--clr-cardBgTop);
+}
+.today__title {
+  grid-column: 1/-1;
+}
+.today__title h1 {
+  font-size: 1.4rem;
+}
+.today__card__top,
+.today__card__bottom {
+  display: flex;
+
+  justify-content: space-between;
+  min-height: 40px;
+  font-weight: var(--fw-lg);
+}
+.today__card__top {
+  align-items: center;
+}
+.today__card__bottom {
+  align-items: flex-end;
+}
+.today__card__stats {
+  font-size: var(--fs-today-card-stats-text);
+  color: var(--clr-Dark-Grayish-Blue-Text-light);
+}
+.today__card__number {
+  font-size: var(--fs-today-card-stats-number);
+}

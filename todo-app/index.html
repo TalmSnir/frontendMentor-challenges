@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="style.css" />
+
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body class="app">
+    <header>
+      <div class="header__container section-container">
+        <h1 class="app__title">todo</h1>
+      </div>
+    </header>
+    <section class="app__add-item">
+      <div class="app__add-item__container section-container">
+        <form action="" class="app__add-item__form">
+          <input
+            type="text"
+            class="new-list-data"
+            placeholder="Create a new todo..."
+          />
+          <button type="submit" class="add-item__form__add">add</button>
+        </form>
+      </div>
+    </section>
+    <main class="app__main">
+      <div class="section-container app__main__container">
+        <ul class="app__main__list"></ul>
+        <div class="list__options">
+          <span class="main__list__counter">5 items left</span
+          ><button class="main__list__clear">clear completed</button>
+        </div>
+      </div>
+    </main>
+    <section class="app__filters">
+      <div class="section-container app__filters__container">
+        <button class="app__filters__button filter-selected btn--all">
+          all</button
+        ><button class="app__filters__button btn--active">active</button
+        ><button class="app__filters__button btn--completed">completed</button>
+      </div>
+    </section>
+    <section class="app__instruction">
+      <span>Drag and drop to reorder list</span>
+    </section>
+    <script src="script.js"></script>
+  </body>
+</html>

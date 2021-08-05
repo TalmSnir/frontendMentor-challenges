@@ -1,0 +1,304 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  /*----------  colors  ----------*/
+
+  --clr-bg-app: hsl(236, 33%, 92%);
+  --clr-bg-list-item-and-header: hsl(0, 0%, 98%);
+
+  --clr-text-list-items-and-filters-hover-focus: hsl(235, 19%, 35%);
+
+  --clr-text-list-items-and-filters: hsl(236, 9%, 61%);
+  --clr-filters-active: hsl(220, 98%, 61%);
+
+  --clr-checkbox-circle-and-strike: hsl(233, 11%, 84%);
+  --clr-checkbox-gradient: linear-gradient(
+    135deg,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  /*----------  font sizes  ----------*/
+
+  --fs-h1: 2rem;
+  --fs-h2: 4.5rem;
+  --fs-h3: 4rem;
+  --fs-text-1: 1rem;
+  --fs-text-2: 1.5rem;
+  --fs-link: 1.5rem;
+  --fs-btn-filters: 1.1rem;
+
+  /*----------  font weights  ----------*/
+
+  --fw-md: 700;
+  --fw-sm: 400;
+  --ff-primary: "Josefin Sans", sans-serif;
+
+  /*----------  padding  ----------*/
+
+  --body-p-block: 3rem;
+  --body-p-inline: 1rem;
+}
+
+/*=============================================
+=            body            =
+=============================================*/
+
+body {
+  background: var(--clr-bg-app);
+  font-family: var(--ff-primary);
+  position: relative;
+  font-size: var(--fs-text-1);
+}
+body::before {
+  content: "";
+  position: absolute;
+  height: 30vh;
+  width: 100%;
+  z-index: -1;
+  background: url(./assets/bg-mobile-light.jpg) left top/cover no-repeat;
+}
+
+.section-container {
+  max-width: 800px;
+  display: block;
+  margin: 0 auto;
+}
+/*=============================================
+=            utilities            =
+=============================================*/
+*:focus {
+  outline: 0;
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+h1 {
+  font-size: var(--fs-h1);
+  text-transform: uppercase;
+  letter-spacing: 0.4em;
+  color: var(--clr-bg-list-item-and-header);
+}
+input {
+  font-family: var(--ff-primary);
+}
+/*----------  custom checkbox  ----------*/
+
+.custom-checkbox {
+  display: inline-grid;
+  grid-template-areas: "checkbox label";
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+.custom-checkmark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  grid-area: checkbox;
+  height: 1.6em;
+  aspect-ratio: 1/1;
+  border: 0.1em solid var(--clr-checkbox-circle-and-strike);
+  border-radius: 50%;
+  overflow: hidden;
+  cursor: pointer;
+  pointer-events: none;
+}
+.custom-checkmark svg {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+input[type="checkbox"] {
+  opacity: 0;
+  height: 1.6em;
+  width: 1.6em;
+  grid-area: checkbox;
+  cursor: pointer;
+}
+.list__item__text {
+  grid-area: label;
+  pointer-events: none;
+}
+/*checkbox- active state*/
+input[type="checkbox"]:checked + span > svg {
+  opacity: 1;
+  visibility: visible;
+}
+input[type="checkbox"]:checked + span {
+  background: var(--clr-checkbox-gradient);
+}
+input[type="checkbox"]:checked ~ .list__item__text {
+  text-decoration: line-through;
+  color: var(--clr-checkbox-circle-and-strike);
+}
+/*=============================================
+=            header            =
+=============================================*/
+.header__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--body-p-block) var(--body-p-inline);
+}
+
+/*=============================================
+=            section-app add item            =
+=============================================*/
+
+section.app__add-item {
+  background: transparent;
+  padding-inline: var(--body-p-inline);
+}
+.app__add-item__container {
+  background: var(--clr-bg-list-item-and-header);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  padding-inline: 2rem;
+}
+.app__add-item__form {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+input[type="text"] {
+  height: 4rem;
+  border: 0;
+  width: 80%;
+  background: transparent;
+  font-size: var(--fs-text-1);
+}
+input[type="text"]::placeholder {
+  font-size: var(--fs-text-1);
+  color: var(--clr-text-list-items-and-filters);
+  font-weight: var(--fw-sm);
+}
+
+/*=============================================
+=            section-main            =
+=============================================*/
+.app__main {
+  margin-block-start: 2rem;
+  padding-inline: 1rem;
+}
+ul.app__main__list {
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+  overflow: hidden;
+}
+.list__options {
+  border-radius: 0 0 0.5rem 0.5rem;
+}
+ul li,
+.list__options {
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: 2rem;
+  background: var(--clr-bg-list-item-and-header);
+  font-size: var(--fs-text-1);
+  color: var(--clr-text-list-items-and-filters);
+  font-weight: var(--fw-md);
+  transition: all 0.3s;
+}
+ul li {
+  border-bottom: 1px solid var(--clr-checkbox-circle-and-strike);
+  cursor: move;
+}
+ul li.hide {
+  display: none;
+}
+.list__item__text {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+  min-width: 20ch;
+}
+.list__item__text::first-letter {
+  text-transform: uppercase;
+}
+
+.list__item__delete > svg {
+  pointer-events: none;
+}
+button {
+  appearance: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-family: var(--ff-primary);
+  font-weight: var(--fw-md);
+}
+.list__options {
+  align-items: center;
+  justify-content: space-between;
+  display: none;
+}
+.list__options.show {
+  display: flex;
+}
+.list__options * {
+  color: var(--clr-text-list-items-and-filters);
+  font-weight: var(--fw-sm);
+  font-size: var(--fs-text-1);
+}
+/*=============================================
+=            section-app filters            =
+=============================================*/
+.app__filters {
+  margin-block-start: 2rem;
+  padding-inline: 1rem;
+  display: none;
+}
+.app__filters.show {
+  display: block;
+}
+.app__filters__container {
+  height: 4rem;
+  background: var(--clr-bg-list-item-and-header);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  border-radius: 0.5rem;
+}
+.app__filters__button {
+  font-size: var(--fs-btn-filters);
+  color: var(--clr-text-list-items-and-filters);
+}
+.filter-selected {
+  color: var(--clr-filters-active);
+}
+
+/*=============================================
+=            section app instructions            =
+=============================================*/
+.app__instruction {
+  margin-block: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-text-list-items-and-filters);
+  font-weight: var(--fw-md);
+}
+
+/*=============================================
+=            drag and drop features            =
+=============================================*/
+.main__list__item.dragging {
+  opacity: 0.7;
+}

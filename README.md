@@ -11,6 +11,8 @@ each folder contains:
 
 ## Live Projects:
 
+[Chat app CSS illustration](https://frontendmentor-chat-app-css.netlify.app/)
+
 [easybank landing page master](https://frontendmentor-easybank-landing-page.netlify.app/)
 
 [social-media-dashboard-with-theme-switcher](https://frontendmentor-social-media-dashboard-with-theme-switcher.netlify.app/)

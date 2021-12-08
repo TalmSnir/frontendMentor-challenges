@@ -168,6 +168,7 @@ function dragOver(e) {
     ? this.insertBefore(dragElement, dropBeforeElement)
     : this.appendChild(dragElement);
 }
+//calculating the drop position: getting the element closets to the mouse position and returns it to the dragOver function
 function getDropPosition(container, y) {
   const listItems = [...container.querySelectorAll("li:not(dragging)")];
   return listItems.reduce(
